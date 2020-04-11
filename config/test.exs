@@ -12,7 +12,9 @@ config :habit_tracker, HabitTracker.Repo,
 # you can enable the server option below.
 config :habit_tracker, HabitTrackerWeb.Endpoint,
   http: [port: 4002],
-  server: false
+  server: true
+
+config :habit_tracker, :sql_sandbox, true
 
 # Print only warnings and errors during test
 config :logger, level: :warn

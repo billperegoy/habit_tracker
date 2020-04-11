@@ -44,4 +44,8 @@ defmodule HabitTrackerWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug HabitTrackerWeb.Router
+
+  if Application.get_env(:habit_tracker, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
 end
