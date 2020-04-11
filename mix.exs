@@ -34,6 +34,7 @@ defmodule HabitTracker.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:credo, "~> 1.3", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0.0", only: [:dev], runtime: false},
       {:ecto_sql, "~> 3.1"},
       {:gettext, "~> 0.11"},

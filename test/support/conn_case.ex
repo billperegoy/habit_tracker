@@ -16,6 +16,7 @@ defmodule HabitTrackerWeb.ConnCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL
 
   using do
     quote do
@@ -29,10 +30,10 @@ defmodule HabitTrackerWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(HabitTracker.Repo)
+    :ok = SQL.Sandbox.checkout(HabitTracker.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(HabitTracker.Repo, {:shared, self()})
+      SQL.Sandbox.mode(HabitTracker.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
