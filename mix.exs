@@ -47,7 +47,7 @@ defmodule HabitTracker.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:postgrex, ">= 0.0.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev,  :tes]]}
+      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev,  :test]]}
     ]
   end
 
