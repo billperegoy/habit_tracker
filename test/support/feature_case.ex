@@ -1,4 +1,9 @@
 defmodule HabitTrackerWeb.FeatureCase do
+  @moduledoc """
+  This module defines the test case to be used by
+  teture tests that use wallaby.
+  """
+
   use ExUnit.CaseTemplate
 
   using do

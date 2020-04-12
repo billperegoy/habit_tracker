@@ -11,7 +11,8 @@ defmodule HabitTracker.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      dialyzer: [plt_add_deps: :transitive]
+      # dialyzer: [plt_add_deps: :transitive]
+      dialyzer: [plt_add_apps: [:ex_unit]]
     ]
   end
 
@@ -35,7 +36,7 @@ defmodule HabitTracker.MixProject do
   defp deps do
     [
       {:credo, "~> 1.3", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0.0", only: [:dev], runtime: false},
+      {:dialyxir, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:ecto_sql, "~> 3.1"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
@@ -46,7 +47,7 @@ defmodule HabitTracker.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:postgrex, ">= 0.0.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:wallaby, "~> 0.23.0", [runtime: false, only: :test]}
+      {:wallaby, "~> 0.23.0", [runtime: false, only: [:dev,  :tes]]}
     ]
   end
 
